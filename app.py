@@ -10,5 +10,12 @@ with open('dinosaurs.csv', 'r') as csvfile:
 
 
 @app.route('/')
-def hiindex():
-    return render_template('index.html', dinosaurs=dinosaurs)
+@app.route('/dino')
+@app.route('/dino/<dino>')
+def index(dino = None):
+    if dino and dino in dinosaurs.keys():
+        dinosaur = dinosaurs[dino]
+        return render_template('dino.html', dinosaur = dinosaur)
+    else:
+        return render_template('index.html', dinosaurs=dinosaurs)
+

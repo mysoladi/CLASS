@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block title%} Dinosaur! {% endblock %}
+
+{%block content%}{%endblock%}
+    <figure>
+        <img src="{{url_for('static', filename= 'images/' + dinosaur['image'])}}"
+        alt= "{{dino}}">
+        <figcaption>{{dinosaur['image-credit']}}</figcaption>
+    </figure>
+    <h1>{{dinosur['name']}}</h1>
+    <p>{{dinosur['description']}}</p>
+    <p>{{dinosur['source-credit']}}</p>
+
+{%endblock%}
