@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!--￿CSS￿Styles￿-->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <!-- resets￿default￿browser￿styles￿-->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-
-    NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="  
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--￿custom￿styles￿-->
-    <link rel="stylesheet" type="text/css" href="static/styles.css">
-    <title>{% block title %}dino page{% endblock %}</title>
-</head>
-<body>
-    {% block content %}{% endblock %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Dino-Site!{% endblock %}
+{% block content%}
+<h1>Dino Site!</h1>
+
+
+{%for dino in dinosaurs %}
+    <h2>{{dinosaurs[dino]['name']}}</h2>
+    <a href = "{{url_for('index', dino=dino)}}">
+        <figure>
+            <img src = "{{url_for(static, filename = 'images/' + dinosaurs[dino]['image'])}}" alt ="{{dino}}">
+            <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption>
+        </figure>
+    </a>
+    {% endfor %}
+    
+{% endblock %}
+

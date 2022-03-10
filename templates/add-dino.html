@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Form Dino-site!{% endblock %}
+{%block content%}
+
+<h1> ADD a Dinosour! </h1>
+<for method="post" name= "add_dino">
+
+    <div>
+        <input type= "text" id= "slug" name = "slug">
+        <label for = "slug"> Slug </label>
+    </div>
+    <div>
+        <input type= "text" id= "name" name = "name">
+        <label for = "name"> Name </label>
+    </div>
+    <div>
+        <label for="description"> Description </label>
+        <textarea id="description" name="description" rows="5" cols="33">
+        Write description here: </textarea>
+        <label for="description"> Description </label>
+    </div>
+    <div>
+        <input type= "text" id= "image" name = "image">
+        <label for = "image"> Image </label>
+    </div>
+    <div>
+        <input type= "text" id= "Image-credit" name = "Image-credit">
+        <label for = "Image-credit"> Image-credit </label>
+    </div>
+    <div>
+        <input type= "text" id= "source-url" name = "source-url">
+        <label for = "source-credit"> source-credit </label>
+    </div>
+        <button type= "submit" value= "submit">submit</button>
+        <button type= "reset" value= "reset">reset</button>
+    </form>
+
+
+{%endblock%}
