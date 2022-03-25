@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Quiz Dino-site!{% endblock %}
+{%block content%}
+
+<h1>Dinosaur quiz!</h1>
+
+<form action = "{{url_for('dino_quiz')}}" method = "POST" name="dino_quiz">
+
+<!-- field for dropdown -->
+    <legend>Dinosaur fossils have been found on all seven continents. On which continent have the most dinosaur fossils been found?</legend>
+
+    <select class="form-select mb-3" aria-label="Seven Continents" id="continents" name="continents">
+        <option>Africa</option>
+        <option>Antartica</option>
+        <option>Asia</option>
+        <option>Austrailia</option>
+        <option>Europe</option>
+        <option>North America</option>
+        <option>South America</option>
+    </select>
+
+<!-- Field for checkbox-->
+
+    <fieldset>
+        <legend>Which of these dinosaurs are herbivores? </legend>
+        <ul>
+            <li>
+                <label for="Triceratops">Triceratops</label>
+                <input type="checkbox" id="Triceratops" name="dinosaur" value="Triceratops">
+            </li>
+            <li>
+                <label for="Allosaurus">Allosaurus</label>
+                <input type="checkbox" id="Allosaurus" name="dinosaur" value="Allosaurus">
+            </li>
+            <li>
+                <label for="Stegosaurus">Stegosaurus</label>
+                <input type="checkbox" id="Stegosaurus" name="dinosaur" value="Stegosaurus" >
+            </li>
+            <li>
+                <label for="Velociraptor">Velociraptor</label>
+                <input type="checkbox" id="Velociraptor" name="dinosaur" value="Velociraptor">
+            </li>
+        </ul>
+    </fieldset>
+
+<!-- This is the field for radio  -->
+
+    <fieldset>
+        <legend>Dinosaurs hatched from eggs. True or False?</legend>
+        <ul>
+            <li>
+                <label class="form-check-label" for="true">True</label>
+                <input class="form-check-input" type="radio" id="true" name="eggs" value="true" >
+            </li>
+            <li>
+                <label class="form-check-label" for="false">False</label>
+                <input class="form-check-input" type="radio" id="false" name="eggs" value="false" >
+            </li>
+        </ul>
+    </fieldset>
+
+    <div class="mb-3">
+        <legend>dinosurs went extinct: </legend>
+        <input class = "form control" type = "text">
+        <label class="form-label" for = "extinct">   Millions of Years Ago</label>
+    </div>
+
+<button type = 'submit' value = "submit" > submit </button>
+<button type = 'reset' value = "Reset" > Reset </button>
+</form>
+    
+{%endblock%}

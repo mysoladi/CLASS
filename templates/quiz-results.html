@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} dino quiz results!{% endblock %}
+{%block content%}
+
+<h1 class = "mb-3" >dino quiz results!</h1>
+
+{% set score = namespace(value = 0) %}
+
+{% for question in quizGuesses.keys() %}
+
+<h2>{{question}}</h2>
+{% if quizGuesses[question] == quizAnswers[question] %}
+    <p> Correct! The answer is {{quizAnswers[question]}}.</p>
+    {% set score.value = score.value + 1 %}
+{% else %}
+    <p>Incorrect. The answer is {{quizAnswers[question]}}.</p>
+{% endif %}
+
+{% endfor %}
+
+<h3 class = "mb-3"> Score: {{ score.value }} / {{quizanswers|length}} </h3>
+
+{% endblock %}
