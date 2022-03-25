@@ -85,18 +85,20 @@ def dino_quiz():
 
         quizguesses = {}
         quizguesses['q1'] = request.form['continents']
-        quizguesses['q2'] = request.form.getlist['dinosaur']
+        quizguesses['q2'] = request.form.getlist('dinosaur')
         quizguesses['q3'] = request.form['eggs']
         quizguesses['q4'] = request.form['extinct']
 
+        quizguesses['q2'] =  " and ".join(quizguesses['q2'])
+
         quizAnswers = {
             'q1' : 'North America',
-            'q2' : 'true',
-            'q3' : ['Stegosaurus', 'Triceratops'],
-            'q4' : 66
+            'q2' : 'Triceratops and Stegosaurus',
+            'q3' : 'true',
+            'q4' : '66'
         }
 
-        return redirect(url_for('quiz-results.html', quizguesses = quizguesses, quizAnswers = quizAnswers))
+        return render_template('quiz-results.html', quizguesses = quizguesses, quizAnswers = quizAnswers)
     
     else:
         return render_template('dino-quiz.html')

@@ -6,18 +6,18 @@
 
 {% set score = namespace(value = 0) %}
 
-{% for question in quizGuesses.keys() %}
+{% for question in quizguesses.keys() %}
 
 <h2>{{question}}</h2>
-{% if quizGuesses[question] == quizAnswers[question] %}
-    <p> Correct! The answer is {{quizAnswers[question]}}.</p>
+{% if quizguesses[question] == quizAnswers[question] %}
+    <p> Correct! The answer is {{quizAnswers[question]}}</p>
     {% set score.value = score.value + 1 %}
 {% else %}
-    <p>Incorrect. The answer is {{quizAnswers[question]}}.</p>
+    <p>Incorrect. The answer is {{quizAnswers[question]}}</p>
 {% endif %}
 
 {% endfor %}
 
-<h3 class = "mb-3"> Score: {{ score.value }} / {{quizanswers|length}} </h3>
+<h3 class = "mb-3"> Score: {{ score.value }} / {{quizAnswers|length}} </h3>
 
 {% endblock %}
