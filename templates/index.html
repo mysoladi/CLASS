@@ -10,7 +10,7 @@
                 <h2>{{dinosaurs[dino]['name']}}</h2>
                 <a href = "{{url_for('index', dino=dino)}}">
                     <figure>
-                        <img  class="dino-image img-fluid" src = "{{url_for('static', filename = 'images/' + dinosaurs[dino]['image'])}}" alt ="{{dino}}">
+                        <img  class="col-12 col-md-6 col-lg-4 col-md-2 col-lg-4 col-xl-3 img-fluid" src = "{{url_for('static', filename = 'images/' + dinosaurs[dino]['image'])}}" alt ="{{dino}}">
                         <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption>
                     </figure>
                 </a>
